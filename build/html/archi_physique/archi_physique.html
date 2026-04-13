@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture physique du bolide &mdash; Documentation doc_CoVAPSy 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            doc_CoVAPSy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Architecture physique du bolide</a><ul>
+<li><a class="reference internal" href="#letage-superieur">L’étage supérieur</a><ul>
+<li><a class="reference internal" href="#switch-de-securite">1. Switch de sécurité</a></li>
+<li><a class="reference internal" href="#ecran-de-controle">2. Écran de contrôle</a></li>
+<li><a class="reference internal" href="#imu">3. IMU</a></li>
+<li><a class="reference internal" href="#batterie-de-lordinateur-embarque">4. Batterie de l’ordinateur embarqué</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#letage-intermediaire">L’étage intermédiaire</a></li>
+<li><a class="reference internal" href="#la-partie-superieure-de-letage-intermediaire">La partie supérieure de l’étage intermédiaire</a><ul>
+<li><a class="reference internal" href="#lidar">1. LiDAR</a></li>
+<li><a class="reference internal" href="#adaptateur-slamtec">2. Adaptateur Slamtec</a></li>
+<li><a class="reference internal" href="#stm32">3. STM32</a></li>
+<li><a class="reference internal" href="#hat-carte-dinterface">4. HAT / carte d’interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#la-partie-inferieure-de-letage-intermediaire">La partie inférieure de l’étage intermédiaire</a><ul>
+<li><a class="reference internal" href="#raspberry-pi">1. Raspberry Pi</a></li>
+<li><a class="reference internal" href="#u2d2">2. U2D2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#letage-inferieur">L’étage inférieur</a></li>
+<li><a class="reference internal" href="#la-partie-puissance">La partie puissance</a><ul>
+<li><a class="reference internal" href="#moteur-de-direction">1. Moteur de direction</a></li>
+<li><a class="reference internal" href="#esc">2. ESC</a></li>
+<li><a class="reference internal" href="#moteur-de-propulsion">3. Moteur de propulsion</a></li>
+<li><a class="reference internal" href="#fourche-optique">4. Fourche optique</a></li>
+<li><a class="reference internal" href="#batterie-moteur">5. Batterie moteur</a></li>
+<li><a class="reference internal" href="#mecanisme-de-direction">6. Mécanisme de direction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#la-partie-capteurs">La partie capteurs</a><ul>
+<li><a class="reference internal" href="#capteurs-ultrason">1. Capteurs ultrason</a></li>
+<li><a class="reference internal" href="#capteurs-infrarouges">2. Capteurs infrarouges</a></li>
+<li><a class="reference internal" href="#convertisseur-5-v">3. Convertisseur 5 V</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resume">Résumé</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">doc_CoVAPSy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Architecture physique du bolide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/archi_physique/archi_physique.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="architecture-physique-du-bolide">
+<h1>Architecture physique du bolide<a class="headerlink" href="#architecture-physique-du-bolide" title="Lien vers cette rubrique"></a></h1>
+<p>L’architecture physique de la voiture peut être divisée en trois étages :</p>
+<ul class="simple">
+<li><p>l’étage supérieur ;</p></li>
+<li><p>l’étage intermédiaire ;</p></li>
+<li><p>l’étage inférieur.</p></li>
+</ul>
+<p>Cette organisation permet de séparer les éléments de supervision, de calcul embarqué, de puissance et de capteurs.</p>
+<section id="letage-superieur">
+<h2>L’étage supérieur<a class="headerlink" href="#letage-superieur" title="Lien vers cette rubrique"></a></h2>
+<p>L’étage supérieur est le plus simple à identifier. Il est composé de 4 éléments principaux, ou 5 lorsque la caméra 3D est installée.</p>
+<p><img alt="Vue de l’étage supérieur" src="../_images/voiture_top.jpeg" /></p>
+<section id="switch-de-securite">
+<h3>1. Switch de sécurité<a class="headerlink" href="#switch-de-securite" title="Lien vers cette rubrique"></a></h3>
+<p>Le switch de sécurité permet d’activer ou de couper l’alimentation de la carte STM32, des capteurs et des moteurs.</p>
+<p>Toute cette partie est alimentée par la batterie moteur. En cas de problème, ce switch permet donc d’arrêter rapidement les éléments liés à l’actionnement et aux capteurs.</p>
+</section>
+<section id="ecran-de-controle">
+<h3>2. Écran de contrôle<a class="headerlink" href="#ecran-de-controle" title="Lien vers cette rubrique"></a></h3>
+<p>L’écran affiche le nom de la voiture et sert aussi au diagnostic rapide.</p>
+<p>Le bouton jaune situé en haut à droite permet de réinitialiser la STM32. Cela peut être utile lorsque :</p>
+<ul class="simple">
+<li><p>l’IMU renvoie des données incohérentes ;</p></li>
+<li><p>la voiture ne répond plus correctement ;</p></li>
+<li><p>la carte de contrôle doit être redémarrée sans couper toute l’alimentation.</p></li>
+</ul>
+</section>
+<section id="imu">
+<h3>3. IMU<a class="headerlink" href="#imu" title="Lien vers cette rubrique"></a></h3>
+<p>L’IMU utilisée est un <a class="reference external" href="https://www.bosch-sensortec.com/products/smart-sensor-systems/bno055/">BNO055</a>.</p>
+<p>Elle permet de mesurer :</p>
+<ul class="simple">
+<li><p>l’accélération ;</p></li>
+<li><p>la vitesse angulaire ;</p></li>
+<li><p>l’orientation du véhicule.</p></li>
+</ul>
+<p>Elle est utilisée pour estimer l’orientation de la voiture, notamment le yaw. Dans l’implémentation actuelle, les données brutes sont lues sur le topic <code class="docutils literal notranslate"><span class="pre">/raw_imu_data</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le champ exact à utiliser pour l’orientation dépend du type de message publié par le nœud IMU. Il est recommandé de préciser ici le type du message ROS si vous documentez aussi l’architecture logicielle.</p>
+</div>
+</section>
+<section id="batterie-de-lordinateur-embarque">
+<h3>4. Batterie de l’ordinateur embarqué<a class="headerlink" href="#batterie-de-lordinateur-embarque" title="Lien vers cette rubrique"></a></h3>
+<p>Cette batterie alimente l’ordinateur embarqué indépendamment de la batterie moteur.</p>
+<p>Cette séparation est pratique pour :</p>
+<ul class="simple">
+<li><p>éviter les interférences ou les coupures d’alimentation qui pourraient éteindre la Raspberry Pi ;</p></li>
+</ul>
+</section>
+</section>
+<section id="letage-intermediaire">
+<h2>L’étage intermédiaire<a class="headerlink" href="#letage-intermediaire" title="Lien vers cette rubrique"></a></h2>
+<p>L’étage intermédiaire est divisé en deux parties :</p>
+<ul class="simple">
+<li><p>la partie supérieure ;</p></li>
+<li><p>la partie inférieure.</p></li>
+</ul>
+</section>
+<section id="la-partie-superieure-de-letage-intermediaire">
+<h2>La partie supérieure de l’étage intermédiaire<a class="headerlink" href="#la-partie-superieure-de-letage-intermediaire" title="Lien vers cette rubrique"></a></h2>
+<p>Cette partie est composée de 4 éléments visibles sur la photo suivante.</p>
+<p><img alt="Vue de la partie supérieure de l’étage intermédiaire" src="../_images/voiture_milleu_dessus.jpeg" /></p>
+<section id="lidar">
+<h3>1. LiDAR<a class="headerlink" href="#lidar" title="Lien vers cette rubrique"></a></h3>
+<p>Le LiDAR utilisé est un <a class="reference external" href="https://www.slamtec.com/en/lidar/a2">RPLIDAR A2M12</a>.</p>
+<p>Il permet de mesurer la distance entre la voiture et les obstacles autour d’elle. Il est utilisé pour la perception de l’environnement et les algorithmes de navigation réactive. Les données du LiDAR sont publiées sur le topic <code class="docutils literal notranslate"><span class="pre">/scan</span></code>.</p>
+<p>Dans les dépôts SU-Bolides, le pilote utilisé pour ce capteur est le package <code class="docutils literal notranslate"><span class="pre">sllidar_ros2</span></code>, lancé avec <code class="docutils literal notranslate"><span class="pre">sllidar_node</span></code>.</p>
+</section>
+<section id="adaptateur-slamtec">
+<h3>2. Adaptateur Slamtec<a class="headerlink" href="#adaptateur-slamtec" title="Lien vers cette rubrique"></a></h3>
+<p>Cet adaptateur fait l’interface entre le LiDAR et l’ordinateur embarqué.</p>
+<p>Il convertit la liaison du LiDAR vers une interface exploitable par la Raspberry Pi. D’après ton brouillon, il est relié :</p>
+<ul class="simple">
+<li><p>en micro-USB à la Raspberry Pi ;</p></li>
+<li><p>aux lignes d’alimentation nécessaires au fonctionnement du LiDAR.</p></li>
+</ul>
+<p>Dans les dépôts SU-Bolides, le LiDAR est exposé via le lien dynamique <code class="docutils literal notranslate"><span class="pre">/dev/ttyLIDAR</span></code>, ce qui permet de fiabiliser la connexion côté ROS 2.</p>
+</section>
+<section id="stm32">
+<h3>3. STM32<a class="headerlink" href="#stm32" title="Lien vers cette rubrique"></a></h3>
+<p>La STM32 est le microcontrôleur chargé des fonctions bas niveau.</p>
+<p>Son rôle principal est de :</p>
+<ul class="simple">
+<li><p>piloter le moteur de propulsion ;</p></li>
+<li><p>lire ou relayer certaines données capteurs ;</p></li>
+<li><p>recevoir les commandes provenant de l’ordinateur embarqué.</p></li>
+</ul>
+<p>D’après ton document, la communication avec la Raspberry Pi se fait en SPI. Le code de cette carte n’est pas entièrement disponible dans votre historique Git actuel, ce qui est important à signaler pour les opérations de maintenance ou de reflash.</p>
+</section>
+<section id="hat-carte-dinterface">
+<h3>4. HAT / carte d’interface<a class="headerlink" href="#hat-carte-dinterface" title="Lien vers cette rubrique"></a></h3>
+<p>Le HAT sert d’interface matérielle entre plusieurs sous-systèmes :</p>
+<ul class="simple">
+<li><p>la Raspberry Pi ;</p></li>
+<li><p>la STM32 ;</p></li>
+<li><p>les capteurs ;</p></li>
+<li><p>les moteurs.</p></li>
+</ul>
+<p>Son rôle est de centraliser les connexions, l’alimentation et certaines liaisons de commande. C’est une carte de jonction importante dans l’architecture de la voiture.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="la-partie-inferieure-de-letage-intermediaire">
+<h2>La partie inférieure de l’étage intermédiaire<a class="headerlink" href="#la-partie-inferieure-de-letage-intermediaire" title="Lien vers cette rubrique"></a></h2>
+<p>Cette partie est composée de 2 éléments visibles sur la photo suivante.</p>
+<p><img alt="Vue de la partie inférieure de l’étage intermédiaire" src="../_images/voiture_milleu_bas.jpeg" /></p>
+<section id="raspberry-pi">
+<h3>1. Raspberry Pi<a class="headerlink" href="#raspberry-pi" title="Lien vers cette rubrique"></a></h3>
+<p>L’ordinateur embarqué est une <strong>Raspberry Pi 5</strong> avec <strong>8 Go de RAM</strong>.</p>
+<p>D’après les dépôts SU-Bolides, cette plateforme tourne sous <strong>Ubuntu 24.04</strong> avec <strong>ROS 2 Jazzy</strong>. C’est elle qui exécute les nœuds ROS 2 de la voiture et orchestre la partie haut niveau.</p>
+<p>Elle peut aussi être rejointe en SSH. D’après la documentation SU-Bolides :</p>
+<ul class="simple">
+<li><p>elle peut agir comme hotspot Wi-Fi ;</p></li>
+<li><p>le SSID peut être <code class="docutils literal notranslate"><span class="pre">bolide1</span></code> ou <code class="docutils literal notranslate"><span class="pre">bolide2</span></code> selon la voiture ;</p></li>
+<li><p>l’adresse utilisée dans leur documentation est <code class="docutils literal notranslate"><span class="pre">10.42.0.1</span></code>.</p></li>
+</ul>
+</section>
+<section id="u2d2">
+<h3>2. U2D2<a class="headerlink" href="#u2d2" title="Lien vers cette rubrique"></a></h3>
+<p>L’U2D2 est un convertisseur <strong>USB vers UART</strong> utilisé pour communiquer avec le moteur de direction.</p>
+<p>D’après ton fichier, il est relié :</p>
+<ul class="simple">
+<li><p>côté moteur de direction via la liaison TTL 3 broches ;</p></li>
+<li><p>côté Raspberry Pi en USB pour l’alimentation et la communication.</p></li>
+</ul>
+<p>Dans les dépôts SU-Bolides, la présence de cet adaptateur est vérifiée via le lien dynamique <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSBU2D2</span></code>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="letage-inferieur">
+<h2>L’étage inférieur<a class="headerlink" href="#letage-inferieur" title="Lien vers cette rubrique"></a></h2>
+<p>L’étage inférieur est le plus chargé. Il est séparé en deux sous-parties :</p>
+<ul class="simple">
+<li><p>la partie <strong>puissance</strong> ;</p></li>
+<li><p>la partie <strong>capteurs</strong>.</p></li>
+</ul>
+</section>
+<section id="la-partie-puissance">
+<h2>La partie puissance<a class="headerlink" href="#la-partie-puissance" title="Lien vers cette rubrique"></a></h2>
+<p>Cette partie est composée des éléments liés à l’alimentation et à l’actionnement.</p>
+<p><img alt="Vue de la partie puissance" src="../_images/voiture_bottom_puissance.jpeg" /></p>
+<section id="moteur-de-direction">
+<h3>1. Moteur de direction<a class="headerlink" href="#moteur-de-direction" title="Lien vers cette rubrique"></a></h3>
+<p>Le moteur de direction pilote l’orientation des roues avant.</p>
+<p>Il reçoit ses commandes via la chaîne Raspberry Pi → U2D2 → liaison série TTL → actionneur de direction.</p>
+</section>
+<section id="esc">
+<h3>2. ESC<a class="headerlink" href="#esc" title="Lien vers cette rubrique"></a></h3>
+<p>L’ESC (Electronic Speed Controller) pilote le moteur de propulsion.</p>
+<p>Il reçoit la commande de vitesse depuis l’électronique bas niveau. Dans le troubleshooting SU-Bolides, l’ESC fait partie des éléments à recalibrer si la voiture n’avance plus alors que des commandes sont bien publiées.</p>
+</section>
+<section id="moteur-de-propulsion">
+<h3>3. Moteur de propulsion<a class="headerlink" href="#moteur-de-propulsion" title="Lien vers cette rubrique"></a></h3>
+<p>Le moteur de propulsion assure l’avancement du bolide.</p>
+<p>Il est commandé par l’ESC, lui-même piloté par la chaîne de commande embarquée.</p>
+</section>
+<section id="fourche-optique">
+<h3>4. Fourche optique<a class="headerlink" href="#fourche-optique" title="Lien vers cette rubrique"></a></h3>
+<p>La fourche optique sert à mesurer la rotation ou la vitesse d’un élément mécanique, généralement sur la chaîne de propulsion.</p>
+<p>Dans les dépôts SU-Bolides, il existe un message <code class="docutils literal notranslate"><span class="pre">ForkSpeed</span></code> qui contient une valeur flottante correspondant à la vitesse mesurée par la fourche. Cela confirme que ce capteur est utilisé pour remonter une information de vitesse.</p>
+</section>
+<section id="batterie-moteur">
+<h3>5. Batterie moteur<a class="headerlink" href="#batterie-moteur" title="Lien vers cette rubrique"></a></h3>
+<p>La batterie moteur alimente la partie puissance de la voiture, notamment :</p>
+<ul class="simple">
+<li><p>l’ESC ;</p></li>
+<li><p>le moteur de propulsion ;</p></li>
+<li><p>la STM32 ;</p></li>
+<li><p>une partie des capteurs et actionneurs associés à la chaîne de puissance.</p></li>
+</ul>
+<p>Elle est distincte de la batterie qui alimente l’ordinateur embarqué.</p>
+</section>
+<section id="mecanisme-de-direction">
+<h3>6. Mécanisme de direction<a class="headerlink" href="#mecanisme-de-direction" title="Lien vers cette rubrique"></a></h3>
+<p>Le mécanisme de direction transforme la commande du moteur de direction en angle de braquage au niveau du train avant.</p>
+<p>Cette partie est purement mécanique, mais elle est directement liée à la qualité de la commande envoyée depuis la chaîne logicielle.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="la-partie-capteurs">
+<h2>La partie capteurs<a class="headerlink" href="#la-partie-capteurs" title="Lien vers cette rubrique"></a></h2>
+<p>Cette partie regroupe les capteurs de proximité installés sous la voiture.</p>
+<p><img alt="Vue de la partie capteurs" src="../_images/voiture_bottom_capteur.jpeg" /></p>
+<section id="capteurs-ultrason">
+<h3>1. Capteurs ultrason<a class="headerlink" href="#capteurs-ultrason" title="Lien vers cette rubrique"></a></h3>
+<p>Les capteurs ultrason mesurent la distance à certains obstacles proches.</p>
+<p>Dans les dépôts SU-Bolides, le message <code class="docutils literal notranslate"><span class="pre">MultipleRange</span></code> contient notamment une mesure sonar, même si la documentation précise qu’elle n’est pas utilisée pour le moment.</p>
+</section>
+<section id="capteurs-infrarouges">
+<h3>2. Capteurs infrarouges<a class="headerlink" href="#capteurs-infrarouges" title="Lien vers cette rubrique"></a></h3>
+<p>Les capteurs infrarouges mesurent des distances de proximité.</p>
+<p>D’après les dépôts SU-Bolides, le message <code class="docutils literal notranslate"><span class="pre">MultipleRange</span></code> contient plusieurs mesures de distance, en particulier pour les capteurs infrarouges arrière gauche et arrière droit.</p>
+</section>
+<section id="convertisseur-5-v">
+<h3>3. Convertisseur 5 V<a class="headerlink" href="#convertisseur-5-v" title="Lien vers cette rubrique"></a></h3>
+<p>Le convertisseur 5 V sert à abaisser ou stabiliser la tension nécessaire pour certains capteurs ou cartes électroniques.</p>
+<p>Il permet d’alimenter correctement les composants qui ne fonctionnent pas directement à la tension batterie.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resume">
+<h2>Résumé<a class="headerlink" href="#resume" title="Lien vers cette rubrique"></a></h2>
+<p>L’architecture physique du bolide repose sur une séparation claire entre :</p>
+<ul class="simple">
+<li><p>les éléments de supervision et de sécurité ;</p></li>
+<li><p>l’ordinateur embarqué ;</p></li>
+<li><p>les interfaces de communication ;</p></li>
+<li><p>la chaîne de puissance ;</p></li>
+<li><p>les capteurs de perception et de proximité.</p></li>
+</ul>
+<p>Cette organisation facilite :</p>
+<ul class="simple">
+<li><p>la maintenance ;</p></li>
+<li><p>le diagnostic ;</p></li>
+<li><p>le développement logiciel ;</p></li>
+<li><p>le remplacement des composants ;</p></li>
+<li><p>la compréhension globale du système.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, JACOB Amaury.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
