@@ -272,5 +272,3 @@ Le convertisseur 5 V sert à abaisser ou stabiliser la tension nécessaire pour 
 Il permet d’alimenter correctement les composants qui ne fonctionnent pas directement à la tension batterie comme par exemple le stm32.
 
 Vous pouvez trouver le layout de la carte [ici](https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/Vehicle/Interface_CoVASPSy_v1re2_Schema.pdf).
-
----
