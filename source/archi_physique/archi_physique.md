@@ -208,7 +208,7 @@ Cette partie est composée des éléments liés à l’alimentation et à l’ac
 
 ![Vue de la partie puissance](images/voiture_bottom_puissance.jpeg)
 
-### 5. Batterie moteur
+### 1. Batterie moteur
 
 La batterie moteur alimente la partie puissance de la voiture, notamment :
 
@@ -219,19 +219,7 @@ La batterie moteur alimente la partie puissance de la voiture, notamment :
 
 Elle est distincte de la batterie qui alimente l’ordinateur embarqué. Ce sont des batteries NiMH de 7.2-8.4 V, avec une capacité d’environ 5000 mAh.
 
-### 1. Moteur de direction
-
-Le moteur de direction pilote l’orientation des roues avant. C'est un [AX-12A](https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/).
-
-Il reçoit ses commandes via la chaîne Raspberry Pi → U2D2 → liaison série TTL → actionneur de direction (cf U2D2).
-
-Il est aussi relié à la carte ou sont branchés les capteurs de proximité pour être alimenté par la batterie moteur (7V).
-
-```{note}
-Son baudrate est à 1000000 sur notre bolide 2. Il est à 115200 sur bolide 1. C'est programmable en utilisant le logiciel Dynamixel Wizard 2 et en connectant le servo au PC via l'U2D2.
-```
-
-### 6. Mécanisme de direction
+### 2. Mécanisme de direction
 
 Le mécanisme de direction transforme la commande du moteur de direction en angle de braquage au niveau du train avant.
 
@@ -245,7 +233,19 @@ En pratique la voiture ne roule pas vraiment droit, et c'est encore pire en marc
 
 Les années précédentes avaient écris [ceci](https://github.com/SU-Bolides/Course_2025_ros2/blob/main/docs/Hardware/upgrades.md) au sujet de la direction quand ils ont remplacé le kit de direction du bolide 1.
 
-### 3. Moteur de propulsion
+### 3. Moteur de direction
+
+Le moteur de direction pilote l’orientation des roues avant. C'est un [AX-12A](https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/).
+
+Il reçoit ses commandes via la chaîne Raspberry Pi → U2D2 → liaison série TTL → actionneur de direction (cf U2D2).
+
+Il est aussi relié à la carte ou sont branchés les capteurs de proximité pour être alimenté par la batterie moteur (7V).
+
+```{note}
+Son baudrate est à 1000000 sur notre bolide 2. Il est à 115200 sur bolide 1. C'est programmable en utilisant le logiciel [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) et en connectant le servo au PC via l'U2D2.
+```
+
+### 4. Moteur de propulsion
 
 Le moteur de propulsion est un [Mabuchimotor RS540SH Ref:BD109829](https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/Vehicle/RS-540SH%20datasheet.pdf) sur notre bolide 2.
 
@@ -255,7 +255,7 @@ C'est un [Tamiya 540 Torque 25T Motor](https://www.rcteam.com/en/products/tamiya
 
 Il est commandé par l’ESC, lui-même piloté par le STM32 lui même commandé par la Raspberry Pi.
 
-### 2. ESC
+### 5. ESC
 
 L’ESC (Electronic Speed Controller) pilote le moteur de propulsion c'est un [Tamiya ESC TBLE-04S](https://www.rcteam.com/products/tamiya-variateur-brushless-sensored-tble-04s-45069).
 
@@ -272,7 +272,7 @@ Le signe de `cmd_speed_target` ne suffit pas pour l'odométrie, celà créé des
 L'état de l'ESC ne suffit pas pour connaître le sens de déplacement si la voiture est bougée par une perturbation extérieure (autre voiture). Il peut-être intéressant d'utiliser l'accéléromètre, ou une relocalisation par LiDAR.
 ```
 
-### 4. Fourche optique
+### 6. Fourche optique
 
 La fourche optique sert à mesurer la rotation ou la vitesse. C'est une [TT Electronics OPB815L](https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/OPB815.pdf). Elle est branchée au STM32 via la carte alim par un connecteur 4 broches.
 
@@ -283,7 +283,7 @@ La voiture peut aller de 0.4 m/s à 3 m/s voire plus.
 ```
 
 ```{warning}
-La fourche optique donne une valeur absolue. Elles ne fournit pas le sens de déplacement de la voiture.
+La fourche optique donne une valeur absolue. Elle ne fournit pas le sens de déplacement de la voiture.
 
 À l'arrêt, la fourche optique peut, des fois, donner une vitesse comme si la voiture avançait. Ces vitesses sont entre 0.3 et 0.5 m/s. On pense que c'est parce que la roue peut s'arrêter à cheval sur un trou et donne des fausses valeurs à cause du bruit.
 ```
@@ -296,9 +296,9 @@ Cette partie regroupe les capteurs de proximité installés sous la voiture.
 
 ![Vue de la partie capteurs](images/voiture_bottom_capteur.jpeg)
 
-### 1. Capteurs ultrason
+### 1. Télémètre ultrason
 
-Les capteurs ultrason mesurent la distance à certains obstacles proches. C'est un [Robot Electronics SRF10](https://www.robot-electronics.co.uk/htm/srf10tech.htm) branché par I2C au STM32.
+Le télémètre ultrason mesure la distance derrière la voiture. C'est un [Robot Electronics SRF10](https://www.robot-electronics.co.uk/htm/srf10tech.htm) branché par I2C au STM32.
 
 Il est publié sur le topic `/range/sonar_rear` type standard `sensor_msgs/msg/Range`, compatible avec Nav2.
 

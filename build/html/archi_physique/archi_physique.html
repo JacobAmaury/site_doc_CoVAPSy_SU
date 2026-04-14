@@ -70,16 +70,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#letage-inferieur">L’étage inférieur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-partie-puissance">La partie puissance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#batterie-moteur">5. Batterie moteur</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#moteur-de-direction">1. Moteur de direction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mecanisme-de-direction">6. Mécanisme de direction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#moteur-de-propulsion">3. Moteur de propulsion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#esc">2. ESC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fourche-optique">4. Fourche optique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#batterie-moteur">1. Batterie moteur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mecanisme-de-direction">2. Mécanisme de direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moteur-de-direction">3. Moteur de direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moteur-de-propulsion">4. Moteur de propulsion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#esc">5. ESC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fourche-optique">6. Fourche optique</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#la-partie-capteurs">La partie capteurs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#capteurs-ultrason">1. Capteurs ultrason</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telemetre-ultrason">1. Télémètre ultrason</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#capteurs-infrarouges">2. Capteurs infrarouges</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#convertisseur-dc-dc-5-v-buck">3. Convertisseur DC-DC 5 V (buck)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#la-carte-d-alimentation-interface">4. La carte d’alimentation (interface)</a></li>
@@ -297,7 +297,7 @@ Mais il peut-être envisageable d’avoir une autre installation (cf HAT), voire
 <p>Cette partie est composée des éléments liés à l’alimentation et à l’actionnement.</p>
 <p><img alt="Vue de la partie puissance" src="../_images/voiture_bottom_puissance.jpeg" /></p>
 <section id="batterie-moteur">
-<h3>5. Batterie moteur<a class="headerlink" href="#batterie-moteur" title="Lien vers cette rubrique"></a></h3>
+<h3>1. Batterie moteur<a class="headerlink" href="#batterie-moteur" title="Lien vers cette rubrique"></a></h3>
 <p>La batterie moteur alimente la partie puissance de la voiture, notamment :</p>
 <ul class="simple">
 <li><p>l’ESC</p></li>
@@ -307,18 +307,8 @@ Mais il peut-être envisageable d’avoir une autre installation (cf HAT), voire
 </ul>
 <p>Elle est distincte de la batterie qui alimente l’ordinateur embarqué. Ce sont des batteries NiMH de 7.2-8.4 V, avec une capacité d’environ 5000 mAh.</p>
 </section>
-<section id="moteur-de-direction">
-<h3>1. Moteur de direction<a class="headerlink" href="#moteur-de-direction" title="Lien vers cette rubrique"></a></h3>
-<p>Le moteur de direction pilote l’orientation des roues avant. C’est un <a class="reference external" href="https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/">AX-12A</a>.</p>
-<p>Il reçoit ses commandes via la chaîne Raspberry Pi → U2D2 → liaison série TTL → actionneur de direction (cf U2D2).</p>
-<p>Il est aussi relié à la carte ou sont branchés les capteurs de proximité pour être alimenté par la batterie moteur (7V).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Son baudrate est à 1000000 sur notre bolide 2. Il est à 115200 sur bolide 1. C’est programmable en utilisant le logiciel Dynamixel Wizard 2 et en connectant le servo au PC via l’U2D2.</p>
-</div>
-</section>
 <section id="mecanisme-de-direction">
-<h3>6. Mécanisme de direction<a class="headerlink" href="#mecanisme-de-direction" title="Lien vers cette rubrique"></a></h3>
+<h3>2. Mécanisme de direction<a class="headerlink" href="#mecanisme-de-direction" title="Lien vers cette rubrique"></a></h3>
 <p>Le mécanisme de direction transforme la commande du moteur de direction en angle de braquage au niveau du train avant.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -328,8 +318,18 @@ Mais il peut-être envisageable d’avoir une autre installation (cf HAT), voire
 </div>
 <p>Les années précédentes avaient écris <a class="reference external" href="https://github.com/SU-Bolides/Course_2025_ros2/blob/main/docs/Hardware/upgrades.md">ceci</a> au sujet de la direction quand ils ont remplacé le kit de direction du bolide 1.</p>
 </section>
+<section id="moteur-de-direction">
+<h3>3. Moteur de direction<a class="headerlink" href="#moteur-de-direction" title="Lien vers cette rubrique"></a></h3>
+<p>Le moteur de direction pilote l’orientation des roues avant. C’est un <a class="reference external" href="https://emanual.robotis.com/docs/en/dxl/ax/ax-12a/">AX-12A</a>.</p>
+<p>Il reçoit ses commandes via la chaîne Raspberry Pi → U2D2 → liaison série TTL → actionneur de direction (cf U2D2).</p>
+<p>Il est aussi relié à la carte ou sont branchés les capteurs de proximité pour être alimenté par la batterie moteur (7V).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Son baudrate est à 1000000 sur notre bolide 2. Il est à 115200 sur bolide 1. C’est programmable en utilisant le logiciel <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/">Dynamixel Wizard 2.0</a> et en connectant le servo au PC via l’U2D2.</p>
+</div>
+</section>
 <section id="moteur-de-propulsion">
-<h3>3. Moteur de propulsion<a class="headerlink" href="#moteur-de-propulsion" title="Lien vers cette rubrique"></a></h3>
+<h3>4. Moteur de propulsion<a class="headerlink" href="#moteur-de-propulsion" title="Lien vers cette rubrique"></a></h3>
 <p>Le moteur de propulsion est un <a class="reference external" href="https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/Vehicle/RS-540SH%20datasheet.pdf">Mabuchimotor RS540SH Ref:BD109829</a> sur notre bolide 2.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -338,7 +338,7 @@ Mais il peut-être envisageable d’avoir une autre installation (cf HAT), voire
 <p>Il est commandé par l’ESC, lui-même piloté par le STM32 lui même commandé par la Raspberry Pi.</p>
 </section>
 <section id="esc">
-<h3>2. ESC<a class="headerlink" href="#esc" title="Lien vers cette rubrique"></a></h3>
+<h3>5. ESC<a class="headerlink" href="#esc" title="Lien vers cette rubrique"></a></h3>
 <p>L’ESC (Electronic Speed Controller) pilote le moteur de propulsion c’est un <a class="reference external" href="https://www.rcteam.com/products/tamiya-variateur-brushless-sensored-tble-04s-45069">Tamiya ESC TBLE-04S</a>.</p>
 <p>Il reçoit la commande de vitesse en PWM. Ce PWM correspond au standard pour les ESC. Vous pouvez trouver la documentation de ce composant <a class="reference external" href="https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/doc_ESC.pdf">ici</a>.</p>
 <div class="admonition note">
@@ -353,7 +353,7 @@ L’état de l’ESC ne suffit pas pour connaître le sens de déplacement si la
 </div>
 </section>
 <section id="fourche-optique">
-<h3>4. Fourche optique<a class="headerlink" href="#fourche-optique" title="Lien vers cette rubrique"></a></h3>
+<h3>6. Fourche optique<a class="headerlink" href="#fourche-optique" title="Lien vers cette rubrique"></a></h3>
 <p>La fourche optique sert à mesurer la rotation ou la vitesse. C’est une <a class="reference external" href="https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/OPB815.pdf">TT Electronics OPB815L</a>. Elle est branchée au STM32 via la carte alim par un connecteur 4 broches.</p>
 <p>Les valeurs de ce capteur sont publiées sur le topic <code class="docutils literal notranslate"><span class="pre">/raw_fork_data</span></code>.</p>
 <div class="admonition note">
@@ -362,7 +362,7 @@ L’état de l’ESC ne suffit pas pour connaître le sens de déplacement si la
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
-<p>La fourche optique donne une valeur absolue. Elles ne fournit pas le sens de déplacement de la voiture.</p>
+<p>La fourche optique donne une valeur absolue. Elle ne fournit pas le sens de déplacement de la voiture.</p>
 <p>À l’arrêt, la fourche optique peut, des fois, donner une vitesse comme si la voiture avançait. Ces vitesses sont entre 0.3 et 0.5 m/s. On pense que c’est parce que la roue peut s’arrêter à cheval sur un trou et donne des fausses valeurs à cause du bruit.</p>
 </div>
 </section>
@@ -372,9 +372,9 @@ L’état de l’ESC ne suffit pas pour connaître le sens de déplacement si la
 <h2>La partie capteurs<a class="headerlink" href="#la-partie-capteurs" title="Lien vers cette rubrique"></a></h2>
 <p>Cette partie regroupe les capteurs de proximité installés sous la voiture.</p>
 <p><img alt="Vue de la partie capteurs" src="../_images/voiture_bottom_capteur.jpeg" /></p>
-<section id="capteurs-ultrason">
-<h3>1. Capteurs ultrason<a class="headerlink" href="#capteurs-ultrason" title="Lien vers cette rubrique"></a></h3>
-<p>Les capteurs ultrason mesurent la distance à certains obstacles proches. C’est un <a class="reference external" href="https://www.robot-electronics.co.uk/htm/srf10tech.htm">Robot Electronics SRF10</a> branché par I2C au STM32.</p>
+<section id="telemetre-ultrason">
+<h3>1. Télémètre ultrason<a class="headerlink" href="#telemetre-ultrason" title="Lien vers cette rubrique"></a></h3>
+<p>Le télémètre ultrason mesure la distance derrière la voiture. C’est un <a class="reference external" href="https://www.robot-electronics.co.uk/htm/srf10tech.htm">Robot Electronics SRF10</a> branché par I2C au STM32.</p>
 <p>Il est publié sur le topic <code class="docutils literal notranslate"><span class="pre">/range/sonar_rear</span></code> type standard <code class="docutils literal notranslate"><span class="pre">sensor_msgs/msg/Range</span></code>, compatible avec Nav2.</p>
 </section>
 <section id="capteurs-infrarouges">
