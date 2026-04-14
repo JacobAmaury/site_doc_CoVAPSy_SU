@@ -73,6 +73,8 @@ En pratique, cela peut entraîner :
 - des pertes ponctuelles de localisation.
 
 Pour cette raison, la localisation et la cartographie (réalisé par Nav2) reposent principalement sur le LiDAR.
+
+Voir la section <a href="../troubleshooting/troubleshooting.html#odometrie-incoherente">Odométrie incohérente</a> pour les solutions aux problèmes courants.
 ```
 
 ### 4. Batterie de l’ordinateur embarqué

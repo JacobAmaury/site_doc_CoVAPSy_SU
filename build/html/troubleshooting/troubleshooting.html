@@ -6,7 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
   <title>&lt;no title&gt; &mdash; Documentation doc_CoVAPSy 1</title>
+=======
+  <title>Troubleshooting &mdash; Documentation doc_CoVAPSy 1</title>
+>>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
@@ -63,7 +67,11 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+<<<<<<< HEAD
       <li class="breadcrumb-item active">&lt;no title&gt;</li>
+=======
+      <li class="breadcrumb-item active">Troubleshooting</li>
+>>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/troubleshooting/troubleshooting.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -73,7 +81,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
+<<<<<<< HEAD
   
+=======
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Lien vers cette rubrique"></a></h1>
+<p>Cette section regroupe les problèmes courants et ceux que nous avons rencontrés et les solutions si elles sont connues.</p>
+<section id="odometrie-incoherente">
+<h2>Odométrie incohérente<a class="headerlink" href="#odometrie-incoherente" title="Lien vers cette rubrique"></a></h2>
+<p>Vous avez deux cas distincts : soit le yaw est incohérent, soit les positions x et y sont incohérentes ou encore les deux en même temps.</p>
+<section id="yaw-incoherent">
+<h3>Yaw incohérent<a class="headerlink" href="#yaw-incoherent" title="Lien vers cette rubrique"></a></h3>
+<p>Ce cas est le plus simple à résoudre, cela est du au stm32 il suffit de le redémarrer. Pour cela, il faut appuyer le bouton encoutré sur la photo suivante :</p>
+<a class="reference internal image-reference" href="../_images/reset_yaw.jpeg"><img alt="../_images/reset_yaw.jpeg" src="../_images/reset_yaw.jpeg" style="width: 50%;" />
+</a>
+<p>Vous devriez entendre un bip, cela signifie que le stm32 a redémarré et que le yaw est à nouveau cohérent.</p>
+</section>
+<section id="positions-x-et-y-incoherentes">
+<h3>Positions x et y incohérentes<a class="headerlink" href="#positions-x-et-y-incoherentes" title="Lien vers cette rubrique"></a></h3>
+<p>Ce cas est facile à résoudre il faut juste faire avancer la voiture avec les roues au sol. Cela est du au fait que la fourche optique est entre deux troues du disque codeur, il suffit de faire avancer la voiture pour que la fourche optique puisse se positionner correctement et que les positions x et y soient cohérentes.</p>
+</section>
+</section>
+<section id="moteur-de-direction-qui-ne-repond-pas">
+<h2>Moteur de direction qui ne répond pas<a class="headerlink" href="#moteur-de-direction-qui-ne-repond-pas" title="Lien vers cette rubrique"></a></h2>
+<p>Ici aussi il y a deux causes possibles : le bauderate n’est pas le bon ou le moteur est juste débranché.</p>
+<section id="bauderate-incorrect">
+<h3>Bauderate incorrect<a class="headerlink" href="#bauderate-incorrect" title="Lien vers cette rubrique"></a></h3>
+<p>Il faut changer le paramètre dans le launchfile de sensor. Sur bolide1 il est à 115200 et sur bolide2 il est à 1000000. Si vous avez des doutes vous pouvez utiliser le logiciel : <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/">dynamixel wizard 2</a>. Voir aussi le <a href="tuto_add/tuto_dynamixel_wyzard2.html">tuto dynamixel wizard 2</a> pour utiliser le logiciel.</p>
+</section>
+<section id="moteur-de-direction-debranche">
+<h3>Moteur de direction débranché<a class="headerlink" href="#moteur-de-direction-debranche" title="Lien vers cette rubrique"></a></h3>
+<p>Il faut que le cable du haut soit branché à la carte d’alimentation comme sur la photo suivante :</p>
+<a class="reference internal image-reference" href="../_images/alim_direction.jpeg"><img alt="../_images/alim_direction.jpeg" src="../_images/alim_direction.jpeg" style="width: 50%;" />
+</a>
+</section>
+</section>
+</section>
+
+>>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
 
            </div>
           </div>
