@@ -8,4 +8,6 @@ Bienvenue dans la documentation de la voiture.
    :caption: Sommaire
 
    quick_start/quick_start
+   Connexion_voiture/Connexion_voiture
    archi_physique/archi_physique
+   procedure_de_course/procedure_de_course

@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion à la voiture &mdash; Documentation doc_CoVAPSy 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Architecture physique de la voiture" href="../archi_physique/archi_physique.html" />
+    <link rel="prev" title="Quick Start" href="../quick_start/quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            doc_CoVAPSy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connexion à la voiture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#acces-bureau-a-distance-au-raspberry-pi">Accès bureau à distance au Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acces-terminal-a-distance-via-ssh">Accès terminal à distance via SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acces-aux-fichiers-a-distance-via-sftp">Accès aux fichiers à distance via SFTP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../archi_physique/archi_physique.html">Architecture physique de la voiture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedure_de_course/procedure_de_course.html">Procédure de course</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">doc_CoVAPSy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Connexion à la voiture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Connexion_voiture/Connexion_voiture.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="connexion-a-la-voiture">
+<h1>Connexion à la voiture<a class="headerlink" href="#connexion-a-la-voiture" title="Lien vers cette rubrique"></a></h1>
+<section id="acces-bureau-a-distance-au-raspberry-pi">
+<h2>Accès bureau à distance au Raspberry Pi<a class="headerlink" href="#acces-bureau-a-distance-au-raspberry-pi" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Téléchargez et installez <strong>TigerVNC Viewer</strong> sur votre PC.</p></li>
+<li><p>Connectez votre PC au réseau Wi-Fi du Raspberry Pi (mot de passe : <code class="docutils literal notranslate"><span class="pre">setup1234</span></code>).</p></li>
+<li><p>Lancez une connexion SSH depuis votre PC (mot de passe : <code class="docutils literal notranslate"><span class="pre">ros</span></code>) :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">5901</span>:localhost:5901<span class="w"> </span>voiture@10.42.0.1
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Démarrez le serveur VNC sur le Raspberry Pi (dans le terminal SSH) :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vncserver
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Lancez TigerVNC Viewer sur votre PC :
+Connectez-vous à <code class="docutils literal notranslate"><span class="pre">localhost:5901</span></code> avec le mot de passe <code class="docutils literal notranslate"><span class="pre">setup1234</span></code>.</p></li>
+<li><p>Si nécessaire, le mot de passe du Raspberry Pi est : <code class="docutils literal notranslate"><span class="pre">ros</span></code>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="acces-terminal-a-distance-via-ssh">
+<h2>Accès terminal à distance via SSH<a class="headerlink" href="#acces-terminal-a-distance-via-ssh" title="Lien vers cette rubrique"></a></h2>
+<p>Pour se connecter directement au Raspberry Pi en SSH :</p>
+<ol class="arabic simple">
+<li><p>Vous devez être sur le même réseau (Wi-Fi) que le Raspberry Pi.</p></li>
+<li><p>Dans un terminal :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>voiture@10.42.0.1
+</pre></div>
+</div>
+<p>Mot de passe : <strong>ros</strong></p>
+<p>Lors de la première connexion ou en cas de problème avec la clé SSH :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-R<span class="w"> </span><span class="m">10</span>.42.0.1
+</pre></div>
+</div>
+<p>Puis réessayez de vous connecter.</p>
+</section>
+<hr class="docutils" />
+<section id="acces-aux-fichiers-a-distance-via-sftp">
+<h2>Accès aux fichiers à distance via SFTP<a class="headerlink" href="#acces-aux-fichiers-a-distance-via-sftp" title="Lien vers cette rubrique"></a></h2>
+<p>Vous pouvez explorer les fichiers du Raspberry Pi depuis votre explorateur de fichiers (et utiliser VSCode sur votre PC) en ouvrant une connexion SFTP.</p>
+<ol class="arabic simple">
+<li><p>SFTP utilise SSH : vérifiez que la connexion SSH fonctionne.</p></li>
+<li><p>Cherchez comment vous connecter à un serveur SFTP (SSH-FTP) selon votre explorateur de fichiers.</p></li>
+<li><p>Configurez le client avec :</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Protocole : SFTP
+Serveur : 10.42.0.1
+Utilisateur : voiture
+Port : 22 (par défaut)
+Mot de passe : ros
+</pre></div>
+</div>
+<p>Si plusieurs personnes modifient les fichiers en même temps, pensez à <strong>rafraîchir manuellement</strong> l’explorateur de fichiers.</p>
+<p>Le Raspberry Pi apparaîtra comme un disque monté (comme une clé USB).
+Si vous souhaitez un vrai montage de ce type, utilisez <strong>SSHFS</strong> (voir documentation en ligne).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../quick_start/quick_start.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../archi_physique/archi_physique.html" class="btn btn-neutral float-right" title="Architecture physique de la voiture" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, JACOB Amaury.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
