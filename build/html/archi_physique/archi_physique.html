@@ -342,6 +342,7 @@ Mais il peut-être envisageable d’avoir une autre installation (cf HAT), voire
 <h3>5. ESC<a class="headerlink" href="#esc" title="Lien vers cette rubrique"></a></h3>
 <p>L’ESC (Electronic Speed Controller) pilote le moteur de propulsion c’est un <a class="reference external" href="https://www.rcteam.com/products/tamiya-variateur-brushless-sensored-tble-04s-45069">Tamiya ESC TBLE-04S</a>.</p>
 <p>Il reçoit la commande de vitesse en PWM. Ce PWM correspond au standard pour les ESC. Vous pouvez trouver la documentation de ce composant <a class="reference external" href="https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/doc_ESC.pdf">ici</a>.</p>
+<p>L’ESC a un switch on off pour l’allumer ou non. Quand il passe de off à on il émet un bip court et une led vert s’allume pendant un court instant.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>L’ESC est conçu pour être commandé par une radio. La documentation sur son comportement exact est inexistante. Il a été décrit expérimentalement dans le nœud de machine d’état de l’ESC cmd_vel_node.</p>

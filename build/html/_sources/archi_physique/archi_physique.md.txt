@@ -262,6 +262,8 @@ Il est commandé par l’ESC, lui-même piloté par le STM32 lui même commandé
 L’ESC (Electronic Speed Controller) pilote le moteur de propulsion c'est un [Tamiya ESC TBLE-04S](https://www.rcteam.com/products/tamiya-variateur-brushless-sensored-tble-04s-45069).
 
 Il reçoit la commande de vitesse en PWM. Ce PWM correspond au standard pour les ESC. Vous pouvez trouver la documentation de ce composant [ici](https://github.com/SU-Bolides/Course_2025_ros2/blob/main/ressources/Electronic_ressources/doc_ESC.pdf).
+ 
+L'ESC a un switch on off pour l'allumer ou non. Quand il passe de off à on il émet un bip court et une led vert s'allume pendant un court instant.
 
 ```{note}
 L'ESC est conçu pour être commandé par une radio. La documentation sur son comportement exact est inexistante. Il a été décrit expérimentalement dans le nœud de machine d'état de l'ESC cmd_vel_node.

@@ -6,11 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-  <title>&lt;no title&gt; &mdash; Documentation doc_CoVAPSy 1</title>
-=======
   <title>Troubleshooting &mdash; Documentation doc_CoVAPSy 1</title>
->>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
@@ -67,11 +63,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-<<<<<<< HEAD
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
-=======
       <li class="breadcrumb-item active">Troubleshooting</li>
->>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/troubleshooting/troubleshooting.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -81,14 +73,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-<<<<<<< HEAD
-  
-=======
   <section id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Lien vers cette rubrique"></a></h1>
 <p>Cette section regroupe les problèmes courants et ceux que nous avons rencontrés et les solutions si elles sont connues.</p>
-<section id="odometrie-incoherente">
-<h2>Odométrie incohérente<a class="headerlink" href="#odometrie-incoherente" title="Lien vers cette rubrique"></a></h2>
+<section id="i-odometrie-incoherente">
+<h2>I/ Odométrie incohérente<a class="headerlink" href="#i-odometrie-incoherente" title="Lien vers cette rubrique"></a></h2>
 <p>Vous avez deux cas distincts : soit le yaw est incohérent, soit les positions x et y sont incohérentes ou encore les deux en même temps.</p>
 <section id="yaw-incoherent">
 <h3>Yaw incohérent<a class="headerlink" href="#yaw-incoherent" title="Lien vers cette rubrique"></a></h3>
@@ -102,8 +91,8 @@
 <p>Ce cas est facile à résoudre il faut juste faire avancer la voiture avec les roues au sol. Cela est du au fait que la fourche optique est entre deux troues du disque codeur, il suffit de faire avancer la voiture pour que la fourche optique puisse se positionner correctement et que les positions x et y soient cohérentes.</p>
 </section>
 </section>
-<section id="moteur-de-direction-qui-ne-repond-pas">
-<h2>Moteur de direction qui ne répond pas<a class="headerlink" href="#moteur-de-direction-qui-ne-repond-pas" title="Lien vers cette rubrique"></a></h2>
+<section id="ii-moteur-de-direction-qui-ne-repond-pas">
+<h2>II/ Moteur de direction qui ne répond pas<a class="headerlink" href="#ii-moteur-de-direction-qui-ne-repond-pas" title="Lien vers cette rubrique"></a></h2>
 <p>Ici aussi il y a deux causes possibles : le bauderate n’est pas le bon ou le moteur est juste débranché.</p>
 <section id="bauderate-incorrect">
 <h3>Bauderate incorrect<a class="headerlink" href="#bauderate-incorrect" title="Lien vers cette rubrique"></a></h3>
@@ -116,9 +105,111 @@
 </a>
 </section>
 </section>
+<section id="iii-moteurs-qui-ne-repondent-pas">
+<h2>III/ Moteurs qui ne répondent pas<a class="headerlink" href="#iii-moteurs-qui-ne-repondent-pas" title="Lien vers cette rubrique"></a></h2>
+<p>Voici la marche à suivre pour résoudre ce problème :</p>
+<section id="verifier-l-esc">
+<h3>1/ Vérifier l’ESC<a class="headerlink" href="#verifier-l-esc" title="Lien vers cette rubrique"></a></h3>
+<p>Dans un premier temps, vérifier que le switch de sécurité est bien en position ON et que le bouton de l’esc est en off.
+Allumer le switch de l’ESC et vérifier que la led verte s’allume et que vous entendez un bip court. Si ce n’est pas le cas, il y a un problème soit un problème d’alimentation soit un problème sur l’ESC.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Attention : L’ESC est le composant qui brule en premier généralement, il est donc important de vérifier son bon fonctionnement avant de chercher une autre cause.</p>
+</div>
+</section>
+<section id="esc-qui-bip-bip">
+<h3>2/ ESC qui bip bip<a class="headerlink" href="#esc-qui-bip-bip" title="Lien vers cette rubrique"></a></h3>
+<p>Cela veut dire que l’ESC ne ressoit pas de signal de neutre de la part du stm32. Il y a plusieurs causes à se problème : soit le stm32 ne fonctionne pas, soit il est mal branché, soit il est mal configuré.</p>
+<section id="stm32-qui-ne-fonctionne-pas">
+<h4>STM32 qui ne fonctionne pas<a class="headerlink" href="#stm32-qui-ne-fonctionne-pas" title="Lien vers cette rubrique"></a></h4>
+<p>Il faut regarder les led du stm32, une doit s’allumer en rouge et l’autre doit clignoter en rouge comme sur la photo suivante :</p>
+<a class="reference internal image-reference" href="../_images/stm32_led.jpeg"><img alt="../_images/stm32_led.jpeg" src="../_images/stm32_led.jpeg" style="width: 50%;" />
+</a>
+<p>Si elle ne s’allume pas prenez un autre stm32 si sur la boite il y a un scotch c’est quelles sont déjà flashées, sinon il faut le flasher. Suivez suivant pour flasher le stm32 : <a href="tuto_add/tuto_flash_stm32.html">tuto flashing stm32</a>.</p>
+</section>
+<section id="stm32-mal-branche">
+<h4>STM32 mal branché<a class="headerlink" href="#stm32-mal-branche" title="Lien vers cette rubrique"></a></h4>
+<p>Il faut vérifier que le cable sur la photo suivante est bien branché entre le hat et la carte d’alimentation :</p>
+<a class="reference internal image-reference" href="../_images/alim_stm32.jpeg"><img alt="../_images/alim_stm32.jpeg" src="../_images/alim_stm32.jpeg" style="width: 10%;" />
+</a>
+</section>
+</section>
+</section>
+<section id="iv-si-vous-avez-change-lesc">
+<h2>IV/ Si vous avez changé l’ESC<a class="headerlink" href="#iv-si-vous-avez-change-lesc" title="Lien vers cette rubrique"></a></h2>
+<p>Si vous avez remplacé l’ESC, il est nécessaire de le recalibrer afin qu’il fonctionne correctement avec le STM32.<br />
+Cette calibration permet de définir précisément les positions <strong>neutre</strong>, <strong>pleine accélération</strong> et <strong>frein</strong>.</p>
+<section id="calibration-de-lesc-tamiya-tble-04s">
+<h3>Calibration de l’ESC Tamiya TBLE-04S<a class="headerlink" href="#calibration-de-lesc-tamiya-tble-04s" title="Lien vers cette rubrique"></a></h3>
+<p>Suivez les étapes suivantes :</p>
+<ol class="arabic">
+<li><p><strong>Allumer l’ESC</strong><br />
+Vérifiez que :</p>
+<ul class="simple">
+<li><p>le switch de sécurité est sur <strong>ON</strong> ;</p></li>
+<li><p>l’ESC est correctement alimenté.</p></li>
+</ul>
+</li>
+<li><p><strong>Définir le neutre</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur au neutre (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">0.0</span></code>)</p></li>
+<li><p>Appuyer sur le bouton <strong>SET</strong></p></li>
+<li><p>Relâcher lorsque la LED devient rouge pour la deuxième fois</p></li>
+</ul>
+<p>Le neutre est alors enregistré (LED rouge clignotante).</p>
+</li>
+<li><p><strong>Définir la pleine accélération</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur à fond (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">1.0</span></code>)</p></li>
+<li><p>Appuyer sur <strong>SET</strong></p></li>
+</ul>
+<p>Le point haut est alors enregistré (double clignotement rouge).</p>
+</li>
+<li><p><strong>Définir le frein</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur en frein complet (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">-1.0</span></code>)</p></li>
+<li><p>Appuyer sur <strong>SET</strong></p></li>
+</ul>
+<p>La calibration est terminée lorsque la LED s’éteint.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> correspond au topic ROS <code class="docutils literal notranslate"><span class="pre">/cmd_vel</span></code>, utilisé pour piloter la vitesse de la voiture.</p></li>
+<li><p>Vérifiez que le STM32 envoie correctement le signal PWM à l’ESC après calibration.</p></li>
+<li><p>En cas d’échec, redémarrez l’ESC et recommencez la procédure.</p></li>
+</ul>
+</div>
+</section>
+<section id="active-la-marche-arriere">
+<h3>Active la marche arrière<a class="headerlink" href="#active-la-marche-arriere" title="Lien vers cette rubrique"></a></h3>
+<p>Sur certains ESC, la marche arrière peut être désactivée par défaut.</p>
+<ol class="arabic simple">
+<li><p>Allumer l’ESC en maintenant le bouton SET appuyé</p></li>
+<li><p>Appuyer brièvement sur SET pour entrer en mode programmation (LED rouge clignotante)</p></li>
+<li><p>Maintenir l’accélérateur en marche arrière (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">-1.0</span></code>) pendant environ 2 à 3 secondes</p></li>
+<li><p>Attendre un changement de clignotement de la LED ou un bip</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Certains ESC désactivent la marche arrière pour des raisons de sécurité.</p></li>
+<li><p>Après activation, des valeurs négatives sur <code class="docutils literal notranslate"><span class="pre">/cmd_vel</span></code> permettent de faire reculer la voiture.</p></li>
+<li><p>Si la marche arrière ne fonctionne pas, vérifiez la calibration et les connexions.</p></li>
+</ul>
+</div>
+</section>
+<section id="plus-sur-l-esc-tamiya-tble-04s">
+<h3>Plus sur l’ESC Tamiya TBLE-04S<a class="headerlink" href="#plus-sur-l-esc-tamiya-tble-04s" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p>Tout sur l’initialisation ESC : <a class="reference external" href="https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html">https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html</a></p></li>
+<li><p>Vidéo : Setting Up Your New TBLE-04S ESC (rechercher sur YouTube)</p></li>
+</ul>
+</section>
+</section>
 </section>
 
->>>>>>> f4a35a5 (ajout d'image et de problemes dans troubleshooting)
 
            </div>
           </div>
