@@ -72,7 +72,7 @@ Lancez dans 4 terminaux (n'oubliez pas de changer le nom de la map):
 ros2 launch bolide_teleop sensors.launch.py
 
 ros2 launch nav2_bringup localization_launch.py \
-  map:=/home/voiture/bolide_voiture/maps/final.yaml \
+  map:=/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml \
   params_file:=/home/voiture/bolide_voiture/config_nav2/amcl_params.yaml
 
 ros2 launch nav2_bringup navigation_launch.py \
