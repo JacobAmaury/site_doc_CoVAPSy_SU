@@ -29,7 +29,7 @@ Ce cas est facile à résoudre il faut juste faire avancer la voiture avec les r
 Ici aussi il y a deux causes possibles : le bauderate n'est pas le bon ou le moteur est juste débranché.
 ### Bauderate incorrect
 
-Il faut changer le paramètre dans le launchfile de sensor. Sur bolide1 il est à 115200 et sur bolide2 il est à 1000000. Si vous avez des doutes vous pouvez utiliser le logiciel : [dynamixel wizard 2](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/). Voir aussi le <a href="tuto_add/tuto_dynamixel_wyzard2.html">tuto dynamixel wizard 2</a> pour utiliser le logiciel. 
+Il faut changer le paramètre dans le launchfile de sensor. Sur bolide1 il est à 115200 et sur bolide2 il est à 1000000. Si vous avez des doutes vous pouvez utiliser le logiciel : [dynamixel wizard 2](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/). Voir aussi le <a href="tuto_add/tuto_dynamixel_wyzard2.html" style="color:red;">tuto dynamixel wizard 2</a> pour utiliser le logiciel. 
 
 ### Moteur de direction débranché
 
@@ -136,3 +136,17 @@ Sur certains ESC, la marche arrière peut être désactivée par défaut.
 
 - Tout sur l'initialisation ESC : <https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html>
 - Vidéo : Setting Up Your New TBLE-04S ESC (rechercher sur YouTube)
+
+
+## V/ Comportement non logique avec Nav2 
+
+Si vous observez un comportement non logique et qu'il se reproduit au même endroit. Nous avons observé des comportements surprenants en fonction de la présence du soleil. Nous avons constaté ce bug au niveau des virages au fond de la piste de Saint-Cyr et du fond du couloir du deuxième étage de Esclangon. Une solution à Saint-Cyr est de couvrir les fenêtres du fond de la piste avec pour éviter que le soleil ne rentre et perturbe le lidar. Ce bug est vraiment bizarre car sur Rviz2 les points du lidar sont cohérents et ne semblent pas perturbés par le soleil.
+
+## VI/ voiture qui avance en saccadé
+
+Il arrive que la voiture avance et s'arrête très vite. Cela est très probablement du à un noeud qui publie du neutre dans le topic `/cmd_vel`. Par exemple vous avez peut-être lancé 2 noeud téléop un va réster au neutre et l'autre va lui dire d'avancer ce qui produit ce mouvement. Vous pouvez l'observer sur le gif suivant : 
+
+%TODO
+```{image} images/sacade.gif
+:width: 50%
+```

@@ -19,7 +19,8 @@
       <script src="../_static/translations.js?v=e6b791cb"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" /> 
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Procédure de course" href="../procedure_de_course/procedure_de_course.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,11 +43,39 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Connexion_voiture/Connexion_voiture.html">Connexion à la voiture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archi_physique/archi_physique.html">Architecture physique de la voiture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../procedure_de_course/procedure_de_course.html">Procédure de course</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#i-odometrie-incoherente">I/ Odométrie incohérente</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#yaw-incoherent">Yaw incohérent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#positions-x-et-y-incoherentes">Positions x et y incohérentes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ii-moteur-de-direction-qui-ne-repond-pas">II/ Moteur de direction qui ne répond pas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bauderate-incorrect">Bauderate incorrect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moteur-de-direction-debranche">Moteur de direction débranché</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#iii-moteurs-qui-ne-repondent-pas">III/ Moteurs qui ne répondent pas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verifier-l-esc">1/ Vérifier l’ESC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#esc-qui-bip-bip">2/ ESC qui bip bip</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stm32-qui-ne-fonctionne-pas">STM32 qui ne fonctionne pas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stm32-mal-branche">STM32 mal branché</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#iv-si-vous-avez-change-lesc">IV/ Si vous avez changé l’ESC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-de-lesc-tamiya-tble-04s">Calibration de l’ESC Tamiya TBLE-04S</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#active-la-marche-arriere">Active la marche arrière</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plus-sur-l-esc-tamiya-tble-04s">Plus sur l’ESC Tamiya TBLE-04S</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -96,7 +125,7 @@
 <p>Ici aussi il y a deux causes possibles : le bauderate n’est pas le bon ou le moteur est juste débranché.</p>
 <section id="bauderate-incorrect">
 <h3>Bauderate incorrect<a class="headerlink" href="#bauderate-incorrect" title="Lien vers cette rubrique"></a></h3>
-<p>Il faut changer le paramètre dans le launchfile de sensor. Sur bolide1 il est à 115200 et sur bolide2 il est à 1000000. Si vous avez des doutes vous pouvez utiliser le logiciel : <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/">dynamixel wizard 2</a>. Voir aussi le <a href="tuto_add/tuto_dynamixel_wyzard2.html">tuto dynamixel wizard 2</a> pour utiliser le logiciel.</p>
+<p>Il faut changer le paramètre dans le launchfile de sensor. Sur bolide1 il est à 115200 et sur bolide2 il est à 1000000. Si vous avez des doutes vous pouvez utiliser le logiciel : <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/">dynamixel wizard 2</a>. Voir aussi le <a href="tuto_add/tuto_dynamixel_wyzard2.html" style="color:red;">tuto dynamixel wizard 2</a> pour utiliser le logiciel.</p>
 </section>
 <section id="moteur-de-direction-debranche">
 <h3>Moteur de direction débranché<a class="headerlink" href="#moteur-de-direction-debranche" title="Lien vers cette rubrique"></a></h3>
@@ -213,7 +242,9 @@ Vérifiez que :</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../procedure_de_course/procedure_de_course.html" class="btn btn-neutral float-left" title="Procédure de course" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
 
   <hr/>
 
