@@ -11,4 +11,4 @@ Bienvenue dans la documentation de la voiture.
    Connexion_voiture/Connexion_voiture
    archi_physique/archi_physique
    procedure_de_course/procedure_de_course
-   troubleshooting/troubleshooting
+   troubleshooting/index

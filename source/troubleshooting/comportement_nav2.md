@@ -1,0 +1,3 @@
+# Comportement non logique avec Nav2
+
+Si vous observez un comportement non logique et qu'il se reproduit au même endroit. Nous avons observé des comportements surprenants en fonction de la présence du soleil. Nous avons constaté ce bug au niveau des virages au fond de la piste de Saint-Cyr et du fond du couloir du deuxième étage de Esclangon. Une solution à Saint-Cyr est de couvrir les fenêtres du fond de la piste avec pour éviter que le soleil ne rentre et perturbe le lidar. Ce bug est vraiment bizarre car sur Rviz2 les points du lidar sont cohérents et ne semblent pas perturbés par le soleil.

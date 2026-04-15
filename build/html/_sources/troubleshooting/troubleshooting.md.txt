@@ -136,3 +136,17 @@ Sur certains ESC, la marche arrière peut être désactivée par défaut.
 
 - Tout sur l'initialisation ESC : <https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html>
 - Vidéo : Setting Up Your New TBLE-04S ESC (rechercher sur YouTube)
+
+
+## V/ Comportement non logique avec Nav2 
+
+Si vous observez un comportement non logique et qu'il se reproduit au même endroit. Nous avons observé des comportements surprenants en fonction de la présence du soleil. Nous avons constaté ce bug au niveau des virages au fond de la piste de Saint-Cyr et du fond du couloir du deuxième étage de Esclangon. Une solution à Saint-Cyr est de couvrir les fenêtres du fond de la piste avec pour éviter que le soleil ne rentre et perturbe le lidar. Ce bug est vraiment bizarre car sur Rviz2 les points du lidar sont cohérents et ne semblent pas perturbés par le soleil.
+
+## VI/ voiture qui avance en saccadé
+
+Il arrive que la voiture avance et s'arrête très vite. Cela est très probablement du à un noeud qui publie du neutre dans le topic `/cmd_vel`. Par exemple vous avez peut-être lancé 2 noeud téléop un va réster au neutre et l'autre va lui dire d'avancer ce qui produit ce mouvement. Vous pouvez l'observer sur le gif suivant : 
+
+%TODO
+```{image} images/sacade.gif
+:width: 50%
+```
