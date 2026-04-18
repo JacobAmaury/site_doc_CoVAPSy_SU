@@ -46,7 +46,7 @@
               <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Connexion_voiture/Connexion_voiture.html">Connexion à la voiture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Connexion_voiture/Connexion_voiture.html">Connexion avancée à la voiture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../archi_physique/archi_physique.html">Architecture physique de la voiture</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Procédure de course</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creation-de-la-carte">Création de la carte</a></li>
@@ -132,15 +132,14 @@ ros2<span class="w"> </span>launch<span class="w"> </span>slam_toolbox<span clas
 </section>
 <section id="lancement-de-nav2">
 <h2>Lancement de nav2<a class="headerlink" href="#lancement-de-nav2" title="Lien vers cette rubrique"></a></h2>
-<p>Lancez dans 4 terminaux (n’oubliez pas de changer le nom de la map):</p>
+<p>Lancez dans 3 terminaux (n’oubliez pas de changer le nom de la map):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>bolide_teleop<span class="w"> </span>sensors.launch.py
 
-ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>localization_launch.py<span class="w"> </span><span class="se">\</span>
+ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>bringup_launch.py<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>map:<span class="o">=</span>/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>params_file:<span class="o">=</span>/home/voiture/bolide_voiture/config_nav2/amcl_params.yaml
-
-ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>navigation_launch.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>params_file:<span class="o">=</span>/home/voiture/bolide_voiture/config_nav2/nav2_params.yaml
+<span class="w">  </span>params_file:<span class="o">=</span>/home/voiture/bolide_voiture/config_nav2/nav2_params.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>use_composition:<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>use_intra_process_comms:<span class="o">=</span>True
 
 ros2<span class="w"> </span>run<span class="w"> </span>race_path_follower<span class="w"> </span>race_node<span class="w"> </span>--ros-args<span class="w"> </span>--params-file<span class="w"> </span>/home/voiture/bolide_voiture/config_nav2/race_params.yaml
 </pre></div>
