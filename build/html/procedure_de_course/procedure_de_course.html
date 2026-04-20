@@ -135,11 +135,9 @@ ros2<span class="w"> </span>launch<span class="w"> </span>slam_toolbox<span clas
 <p>Lancez dans 3 terminaux (n’oubliez pas de changer le nom de la map):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>bolide_teleop<span class="w"> </span>sensors.launch.py
 
-ros2<span class="w"> </span>launch<span class="w"> </span>nav2_bringup<span class="w"> </span>bringup_launch.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>map:<span class="o">=</span>/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml<span class="w"> </span><span class="se">\</span>
+ros2<span class="w"> </span>launch<span class="w"> </span>race_path_follower<span class="w"> </span>bringup_launch.py<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>params_file:<span class="o">=</span>/home/voiture/bolide_voiture/config_nav2/nav2_params.yaml<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>use_composition:<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>use_intra_process_comms:<span class="o">=</span>True
+<span class="w">  </span>map:<span class="o">=</span>/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml
 
 ros2<span class="w"> </span>run<span class="w"> </span>race_path_follower<span class="w"> </span>race_node<span class="w"> </span>--ros-args<span class="w"> </span>--params-file<span class="w"> </span>/home/voiture/bolide_voiture/config_nav2/race_params.yaml
 </pre></div>

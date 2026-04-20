@@ -71,11 +71,9 @@ Lancez dans 3 terminaux (n'oubliez pas de changer le nom de la map):
 ```bash
 ros2 launch bolide_teleop sensors.launch.py
 
-ros2 launch nav2_bringup bringup_launch.py \
-  map:=/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml \
+ros2 launch race_path_follower bringup_launch.py \
   params_file:=/home/voiture/bolide_voiture/config_nav2/nav2_params.yaml \
-  use_composition:=True \
-  use_intra_process_comms:=True
+  map:=/home/voiture/bolide_voiture/maps/map_etage_2_cleaned.yaml
 
 ros2 run race_path_follower race_node --ros-args --params-file /home/voiture/bolide_voiture/config_nav2/race_params.yaml
 ```
