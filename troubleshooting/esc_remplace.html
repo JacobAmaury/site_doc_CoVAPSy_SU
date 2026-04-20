@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Si vous avez changé l’ESC &mdash; Documentation doc_CoVAPSy 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Comportement non logique avec Nav2" href="comportement_nav2.html" />
+    <link rel="prev" title="Moteurs qui ne répondent pas" href="moteurs_ne_repondent_pas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            doc_CoVAPSy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick_start/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Connexion_voiture/Connexion_voiture.html">Connexion avancée à la voiture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archi_physique/archi_physique.html">Architecture physique de la voiture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../procedure_de_course/procedure_de_course.html">Procédure de course</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Troubleshooting</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#sommaire">Sommaire</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="odometrie_incoherente.html">Odométrie incohérente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moteur_direction.html">Moteur de direction qui ne répond pas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moteurs_ne_repondent_pas.html">Moteurs qui ne répondent pas</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Si vous avez changé l’ESC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calibration-de-l-esc-tamiya-tble-04s">Calibration de l’ESC Tamiya TBLE-04S</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#active-la-marche-arriere">Active la marche arrière</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plus-sur-l-esc-tamiya-tble-04s">Plus sur l’ESC Tamiya TBLE-04S</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="comportement_nav2.html">Comportement non logique avec Nav2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="voiture_saccade.html">Voiture qui avance en saccadé</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">doc_CoVAPSy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Troubleshooting</a></li>
+      <li class="breadcrumb-item active">Si vous avez changé l’ESC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/troubleshooting/esc_remplace.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="si-vous-avez-change-l-esc">
+<h1>Si vous avez changé l’ESC<a class="headerlink" href="#si-vous-avez-change-l-esc" title="Lien vers cette rubrique"></a></h1>
+<p>Si vous avez remplacé l’ESC, il est nécessaire de le recalibrer afin qu’il fonctionne correctement avec le STM32.<br />
+Cette calibration permet de définir précisément les positions <strong>neutre</strong>, <strong>pleine accélération</strong> et <strong>frein</strong>.</p>
+<section id="calibration-de-l-esc-tamiya-tble-04s">
+<h2>Calibration de l’ESC Tamiya TBLE-04S<a class="headerlink" href="#calibration-de-l-esc-tamiya-tble-04s" title="Lien vers cette rubrique"></a></h2>
+<p>Suivez les étapes suivantes :</p>
+<ol class="arabic">
+<li><p><strong>Allumer l’ESC</strong><br />
+Vérifiez que :</p>
+<ul class="simple">
+<li><p>le switch de sécurité est sur <strong>ON</strong> ;</p></li>
+<li><p>l’ESC est correctement alimenté.</p></li>
+</ul>
+</li>
+<li><p><strong>Définir le neutre</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur au neutre (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">0.0</span></code>)</p></li>
+<li><p>Appuyer sur le bouton <strong>SET</strong></p></li>
+<li><p>Relâcher lorsque la LED devient rouge pour la deuxième fois</p></li>
+</ul>
+<p>Le neutre est alors enregistré (LED rouge clignotante).</p>
+</li>
+<li><p><strong>Définir la pleine accélération</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur à fond (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">1.0</span></code>)</p></li>
+<li><p>Appuyer sur <strong>SET</strong></p></li>
+</ul>
+<p>Le point haut est alors enregistré (double clignotement rouge).</p>
+</li>
+<li><p><strong>Définir le frein</strong></p>
+<ul class="simple">
+<li><p>Mettre l’accélérateur en frein complet (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">-1.0</span></code>)</p></li>
+<li><p>Appuyer sur <strong>SET</strong></p></li>
+</ul>
+<p>La calibration est terminée lorsque la LED s’éteint.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd_vel</span></code> correspond au topic ROS <code class="docutils literal notranslate"><span class="pre">/cmd_vel</span></code>, utilisé pour piloter la vitesse de la voiture.</p></li>
+<li><p>Vérifiez que le STM32 envoie correctement le signal PWM à l’ESC après calibration.</p></li>
+<li><p>En cas d’échec, redémarrez l’ESC et recommencez la procédure.</p></li>
+</ul>
+</div>
+</section>
+<section id="active-la-marche-arriere">
+<h2>Active la marche arrière<a class="headerlink" href="#active-la-marche-arriere" title="Lien vers cette rubrique"></a></h2>
+<p>Sur certains ESC, la marche arrière peut être désactivée par défaut.</p>
+<ol class="arabic simple">
+<li><p>Allumer l’ESC en maintenant le bouton SET appuyé</p></li>
+<li><p>Appuyer brièvement sur SET pour entrer en mode programmation (LED rouge clignotante)</p></li>
+<li><p>Maintenir l’accélérateur en marche arrière (<code class="docutils literal notranslate"><span class="pre">cmd_vel</span> <span class="pre">=</span> <span class="pre">-1.0</span></code>) pendant environ 2 à 3 secondes</p></li>
+<li><p>Attendre un changement de clignotement de la LED ou un bip</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Certains ESC désactivent la marche arrière pour des raisons de sécurité.</p></li>
+<li><p>Après activation, des valeurs négatives sur <code class="docutils literal notranslate"><span class="pre">/cmd_vel</span></code> permettent de faire reculer la voiture.</p></li>
+<li><p>Si la marche arrière ne fonctionne pas, vérifiez la calibration et les connexions.</p></li>
+</ul>
+</div>
+</section>
+<section id="plus-sur-l-esc-tamiya-tble-04s">
+<h2>Plus sur l’ESC Tamiya TBLE-04S<a class="headerlink" href="#plus-sur-l-esc-tamiya-tble-04s" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Tout sur l’initialisation ESC : <a class="reference external" href="https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html">https://www.thercracer.com/2021/05/tamiya-tble-04s-esc-speed-controller.html</a></p></li>
+<li><p>Vidéo : Setting Up Your New TBLE-04S ESC (rechercher sur YouTube)</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="moteurs_ne_repondent_pas.html" class="btn btn-neutral float-left" title="Moteurs qui ne répondent pas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="comportement_nav2.html" class="btn btn-neutral float-right" title="Comportement non logique avec Nav2" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2026, JACOB Amaury.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
